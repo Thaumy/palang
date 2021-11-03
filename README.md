@@ -2,16 +2,8 @@
 
 pilipala management language
 
-## 快速入门的最佳实践
+## palang 开发分支
 
-[QuickStart](/doc/1_0_0.md)
+在此分支下你可以看到palang的最新开发进展。
 
-## palangCLI
-
-palangCLI是对palang标准的客户端实现。
-
-目前有F#和C两种版本，均与palang远程服务兼容。
-
-## palangServer
-
-palangServer是palang远程服务的最简实现（F#）。
+切勿在生产环境下使用此分支，main分支提供了经测试的稳定性。
