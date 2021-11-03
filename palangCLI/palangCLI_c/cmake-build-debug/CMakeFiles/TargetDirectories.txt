@@ -1,0 +1,3 @@
+F:/project/pilipala_fs/palangCLI/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/project/pilipala_fs/palangCLI/cmake-build-debug/CMakeFiles/palangCLI.dir
+F:/project/pilipala_fs/palangCLI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
