@@ -4,7 +4,7 @@ pilipala management language
 
 ## 快速入门的最佳实践
 
-[QuickStart](\doc\1_0_0.md)
+[QuickStart](/doc/1_0_0.md)
 
 ## palangCLI
 
