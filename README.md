@@ -1,0 +1,2 @@
+# palang
+pilipala management language
