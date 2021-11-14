@@ -52,9 +52,9 @@
  将markdown字符串转换为html字符串
 </summary>
 </member>
-<member name="M:pilipala.util.snowflake.gen">
+<member name="M:pilipala.util.palaflake.gen">
 <summary>
- 生成snowflake
+ 生成palaflake
 </summary>
 </member>
 <member name="T:pilipala.util.uuid.UuidFormat">
