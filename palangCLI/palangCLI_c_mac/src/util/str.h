@@ -29,4 +29,23 @@ int strBeginWith(char *str, char *anotherStr) {
     return 1;
 }
 
+///拼接
+char *strConcat(char *str1, char *str2) {
+    int len1 = (int) strlen(str1);
+    int len2 = (int) strlen(str2);
+
+    char *result = malloc(sizeof(char) * (len1 + len2 + 1));
+
+    memcpy(result, str1, len1);
+    memcpy(result + len1, str2, len2);
+
+    result[len1 + len2] = '\0';//终止符
+
+    return result;
+}
+
+char *strConcat3(char *str1, char *str2, char *str3) {
+    return strConcat(strConcat(str1, str2), str3);
+}
+
 #endif //PALANGCLI_STR_H

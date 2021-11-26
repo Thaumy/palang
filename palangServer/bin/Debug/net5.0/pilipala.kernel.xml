@@ -2,19 +2,31 @@
 <doc>
 <assembly><name>pilipala.kernel</name></assembly>
 <members>
-<member name="M:pilipala.data.fn.last``1(Microsoft.FSharp.Collections.FSharpList{``0})">
-<summary>
- 返回list最后一项
-</summary>
-</member>
-<member name="M:pilipala.data.option.op_GreaterGreaterEqualsBar``1(Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.Unit})">
-<summary>
- flatMap但不返回值
-</summary>
-</member>
-<member name="T:pilipala.data.option.TryToUnwarpNone">
+<member name="T:pilipala.data.enhOption.TryToUnwarpNone">
 <summary>
  尝试拆箱None错误
+</summary>
+</member>
+<member name="M:pilipala.data.fn.konst``2(``0,``1)">
+<summary>
+ aka const
+</summary>
+</member>
+<member name="M:pilipala.data.op.debugLog``1(Microsoft.FSharp.Core.FSharpFunc{``0,System.String},``0)">
+<summary>
+ 打印对程序员友好对格式
+ 通常这类API使用递归+反射实现，会带来一定的性能损失。
+</summary>
+</member>
+<member name="M:pilipala.data.op.debug``1(Microsoft.FSharp.Core.FSharpFunc{``0,System.String},``0)">
+<summary>
+ 对程序员友好的格式
+ 通常这类API使用递归+反射实现，会带来一定的性能损失。
+</summary>
+</member>
+<member name="M:pilipala.data.op.op_GreaterGreaterEqualsBar``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{``1,``2},``2}},``0,Microsoft.FSharp.Core.FSharpFunc{``1,``2})">
+<summary>
+ flatMap但不返回值
 </summary>
 </member>
 <member name="M:pilipala.util.hash.Object.get_sha256(System.Object)">
@@ -405,42 +417,47 @@
  这可能是由id错误或数据库连接存在问题导致的
 </summary>
 </member>
-<member name="F:pilipala.container.post.record.PostRecord.cache">
+<member name="M:pilipala.container.cache.KVPool.set(System.String,System.UInt64,System.String,System.Object)">
 <summary>
- 字段缓存
+ 写字段值
 </summary>
 </member>
-<member name="M:pilipala.container.post.record.PostRecord.trySummary``1(Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpResult{``0,System.Exception}})">
+<member name="M:pilipala.container.cache.KVPool.get``1(System.String,System.UInt64,System.String)">
+<summary>
+ 取字段值
+</summary>
+</member>
+<member name="M:pilipala.container.post.record.PostRecord.trySummary``1(Microsoft.FSharp.Core.FSharpFunc{System.String,``0})">
 <summary>
  以正文为参数执行闭包 f, 常用于概述为空时取得一个替代值
 </summary>
 </member>
-<member name="P:pilipala.container.post.record.PostRecord.title(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.post.record.PostRecord.title(System.String)">
 <summary>
  标题
 </summary>
 </member>
-<member name="P:pilipala.container.post.record.PostRecord.summary(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.post.record.PostRecord.summary(System.String)">
 <summary>
  概述
 </summary>
 </member>
-<member name="P:pilipala.container.post.record.PostRecord.mtime(Microsoft.FSharp.Core.FSharpResult{System.DateTime,System.Exception})">
+<member name="P:pilipala.container.post.record.PostRecord.mtime(System.DateTime)">
 <summary>
  修改时间
 </summary>
 </member>
-<member name="P:pilipala.container.post.record.PostRecord.cover(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.post.record.PostRecord.cover(System.String)">
 <summary>
  封面
 </summary>
 </member>
-<member name="P:pilipala.container.post.record.PostRecord.body(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.post.record.PostRecord.body(System.String)">
 <summary>
  正文
 </summary>
 </member>
-<member name="M:pilipala.container.post.record.PostRecord.set``1(System.String,Microsoft.FSharp.Core.FSharpResult{``0,System.Exception})">
+<member name="M:pilipala.container.post.record.PostRecord.set``1(System.String,``0)">
 <summary>
  写字段值
 </summary>
@@ -482,10 +499,6 @@
 </member>
 <member name="M:pilipala.container.post.record.PostRecord.get``1(System.String)">
 <summary>
- 取字段会从缓存头提取
- 写字段会同时写到缓存头
- 此举使得写缓存时不用考虑清理缓存中相同字段的情况
- 同时读缓存时也不用考虑相同的两份缓存哪个是最近写入的
  取字段值
 </summary>
 </member>
@@ -500,42 +513,37 @@
  返回文章记录id
 </summary>
 </member>
-<member name="F:pilipala.container.post.stack.PostStack.cache">
-<summary>
- 字段缓存
-</summary>
-</member>
-<member name="P:pilipala.container.post.stack.PostStack.view(Microsoft.FSharp.Core.FSharpResult{System.UInt32,System.Exception})">
+<member name="P:pilipala.container.post.stack.PostStack.view(System.UInt32)">
 <summary>
  访问数
 </summary>
 </member>
-<member name="P:pilipala.container.post.stack.PostStack.superStackId(Microsoft.FSharp.Core.FSharpResult{System.UInt64,System.Exception})">
+<member name="P:pilipala.container.post.stack.PostStack.superStackId(System.UInt64)">
 <summary>
  上级栈id
 </summary>
 </member>
-<member name="P:pilipala.container.post.stack.PostStack.star(Microsoft.FSharp.Core.FSharpResult{System.UInt32,System.Exception})">
+<member name="P:pilipala.container.post.stack.PostStack.star(System.UInt32)">
 <summary>
  星星数
 </summary>
 </member>
-<member name="P:pilipala.container.post.stack.PostStack.currRecordId(Microsoft.FSharp.Core.FSharpResult{System.UInt64,System.Exception})">
+<member name="P:pilipala.container.post.stack.PostStack.currRecordId(System.UInt64)">
 <summary>
  当前记录id
 </summary>
 </member>
-<member name="P:pilipala.container.post.stack.PostStack.ctime(Microsoft.FSharp.Core.FSharpResult{System.DateTime,System.Exception})">
+<member name="P:pilipala.container.post.stack.PostStack.ctime(System.DateTime)">
 <summary>
  创建时间
 </summary>
 </member>
-<member name="P:pilipala.container.post.stack.PostStack.atime(Microsoft.FSharp.Core.FSharpResult{System.DateTime,System.Exception})">
+<member name="P:pilipala.container.post.stack.PostStack.atime(System.DateTime)">
 <summary>
  访问时间
 </summary>
 </member>
-<member name="M:pilipala.container.post.stack.PostStack.set``1(System.String,Microsoft.FSharp.Core.FSharpResult{``0,System.Exception})">
+<member name="M:pilipala.container.post.stack.PostStack.set``1(System.String,``0)">
 <summary>
  写字段值
 </summary>
@@ -577,10 +585,6 @@
 </member>
 <member name="M:pilipala.container.post.stack.PostStack.get``1(System.String)">
 <summary>
- 取字段会从缓存头提取
- 写字段会同时写到缓存头
- 此举使得写缓存时不用考虑清理缓存中相同字段的情况
- 同时读缓存时也不用考虑相同的两份缓存哪个是最近写入的
  取字段值
 </summary>
 </member>
@@ -595,47 +599,42 @@
  返回文章栈id
 </summary>
 </member>
-<member name="F:pilipala.container.comment.Comment.cache">
-<summary>
- 字段缓存
-</summary>
-</member>
-<member name="P:pilipala.container.comment.Comment.site(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.site(System.String)">
 <summary>
  站点
 </summary>
 </member>
-<member name="P:pilipala.container.comment.Comment.replyTo(Microsoft.FSharp.Core.FSharpResult{System.UInt64,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.replyTo(System.UInt64)">
 <summary>
  回复到
 </summary>
 </member>
-<member name="P:pilipala.container.comment.Comment.ownerStackId(Microsoft.FSharp.Core.FSharpResult{System.UInt64,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.ownerStackId(System.UInt64)">
 <summary>
  所属栈id
 </summary>
 </member>
-<member name="P:pilipala.container.comment.Comment.nick(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.nick(System.String)">
 <summary>
  昵称
 </summary>
 </member>
-<member name="P:pilipala.container.comment.Comment.email(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.email(System.String)">
 <summary>
  电子邮箱
 </summary>
 </member>
-<member name="P:pilipala.container.comment.Comment.ctime(Microsoft.FSharp.Core.FSharpResult{System.DateTime,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.ctime(System.DateTime)">
 <summary>
  创建时间
 </summary>
 </member>
-<member name="P:pilipala.container.comment.Comment.content(Microsoft.FSharp.Core.FSharpResult{System.String,System.Exception})">
+<member name="P:pilipala.container.comment.Comment.content(System.String)">
 <summary>
  内容
 </summary>
 </member>
-<member name="M:pilipala.container.comment.Comment.set``1(System.String,Microsoft.FSharp.Core.FSharpResult{``0,System.Exception})">
+<member name="M:pilipala.container.comment.Comment.set``1(System.String,``0)">
 <summary>
  写字段值
 </summary>
@@ -682,10 +681,6 @@
 </member>
 <member name="M:pilipala.container.comment.Comment.get``1(System.String)">
 <summary>
- 取字段会从缓存头提取
- 写字段会同时写到缓存头
- 此举使得写缓存时不用考虑清理缓存中相同字段的情况
- 同时读缓存时也不用考虑相同的两份缓存哪个是最近写入的
  取字段值
 </summary>
 </member>
@@ -783,7 +778,7 @@
 启动内核
 </summary>
 </member>
-<member name="P:pilipala.kernel.launcher.pilipala.kernel(Microsoft.FSharp.Core.FSharpOption{pilipala.kernel.launcher.pilipala})">
+<member name="P:pilipala.kernel.launcher.pilipala.kernel(pilipala.data.enhOption.Option{pilipala.kernel.launcher.pilipala})">
 <summary>
 内核单例访问器
 </summary>

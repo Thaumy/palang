@@ -45,12 +45,19 @@ int main() {
     //puts(sessenKey);
     {//palang执行阶段
         write_("palang> ");
+
         char *cmd = readLine();
+
         while (!strEq(cmd, "bye")) {
             if (strBeginWith(cmd, "set")) {
                 writeLine("to(input 'q' to finish):");
+
+                //取得新值编码到base64后组装到最终命令
                 char *value = concatInputUntil("q");
-                encrypt_send(c, base64_encode(value, strlen(value)), sessenKey);
+                char *value_in_base64 = base64_encode(value, strlen(value));
+                char *final_cmd = strConcat3(cmd, " to ", value_in_base64);
+
+                encrypt_send(c, final_cmd, sessenKey);
             } else {
                 encrypt_send(c, cmd, sessenKey);
             }
