@@ -14,6 +14,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Snowflake.Core": "2.0.0",
           "YamlDotNet": "11.2.1",
+          "palaflake": "1.0.0.0",
           "pilipala.kernel": "1.0.0.0"
         },
         "runtime": {
@@ -315,6 +316,14 @@
           }
         }
       },
+      "palaflake/1.0.0.0": {
+        "runtime": {
+          "palaflake.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "pilipala.kernel/1.0.0.0": {
         "runtime": {
           "pilipala.kernel.dll": {
@@ -527,6 +536,11 @@
       "sha512": "sha512-tBt8K+korVfrjH9wyDEhiLKxbs8qoLCLIFwvYgkSUuMC9//w3z0cFQ8LQAI/5MCKq+BMil0cfRTRvPeE7eXhQw==",
       "path": "yamldotnet/11.2.1",
       "hashPath": "yamldotnet.11.2.1.nupkg.sha512"
+    },
+    "palaflake/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     },
     "pilipala.kernel/1.0.0.0": {
       "type": "reference",

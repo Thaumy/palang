@@ -3,7 +3,7 @@ database:
   port: 3306
   
   user: root
-  password: 65a1561425f744e2b541303f628963f8
+  password: localhost
 
   poolSize: 32
 

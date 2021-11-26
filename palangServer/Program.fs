@@ -21,8 +21,11 @@ open pilipala.util.hash
 open System.Text.RegularExpressions
 open pilipala.util.encoding
 
+(*let config =
+    readFile @"C:\Users\Thaumy\Desktop\config.yml"*)
+    
 let config =
-    readFile @"C:\Users\Thaumy\Desktop\config.yml"
+    readFile @"/Users/thaumy/Desktop/ghrepo/palang/palangServer/config.yml"
 
 pilipala.start config
 
