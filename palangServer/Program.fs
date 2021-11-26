@@ -23,7 +23,7 @@ open pilipala.util.encoding
 
 (*let config =
     readFile @"C:\Users\Thaumy\Desktop\config.yml"*)
-    
+
 let config =
     readFile @"/Users/thaumy/Desktop/ghrepo/palang/palangServer/config.yml"
 
