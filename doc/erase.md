@@ -7,11 +7,11 @@ v1.0.1
 
 * 格式
   
-  `erase <type_name> <para_1>`
+  `erase <type_name> <1>`
 
   替换文本由下表给出：
 
-  | type_name |    注解    |   para_1    |  注解  |
+  | type_name |    注解    |      1      |  注解  |
   | :-------: | :--------: | :---------: | :----: |
   |  record   |  文章记录  |   type_id   |   -    |
   |   meta    | 文章元信息 |   type_id   |   -    |
@@ -21,7 +21,7 @@ v1.0.1
 
 * 返回
 
-  `<type_name> <para_1> was erased`
+  `<type_name> <1> was erased`
 
   替换文本同上。
 
