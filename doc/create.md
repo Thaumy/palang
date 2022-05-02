@@ -23,15 +23,15 @@ v1.0.1
 
 * 返回
 
-  `new <type_name> was created with <1> <2>`
+  `new <type_name> was created with <para_1> <para_2>`
 
   替换文本由下表给出：
 
-  |      type_name       |   1   |      2      |
-  | :------------------: | :---: | :---------: |
-  | record/meta/comment |  id   |   type_id   |
-  |         tag          | name  |  tag_name   |
-  |        token         | value | token_value |
+  |      type_name      | para_1 |   para_2    |
+  | :-----------------: | :----: | :---------: |
+  | record/meta/comment |   id   |   type_id   |
+  |         tag         |  name  |  tag_name   |
+  |        token        | value  | token_value |
 
   * type_id type_name的唯一uint64标识
   * tag_name 标签名
